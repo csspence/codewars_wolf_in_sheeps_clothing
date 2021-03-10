@@ -17,6 +17,14 @@ Input: ["sheep", "sheep", "wolf"]
 Output: "Pls go away and stop eating my sheep"
 */
 
-function warnTheSheep(queue) {
-
+const warnTheSheep = (queue) => {
+   if(queue[queue.length-1] === 'wolf') {
+      return 'Pls go away and stop eating my sheep';
+   }
+   for(let i = 0; i < queue.length; i++) {
+      if(queue[i] === 'wolf') {
+         let index = queue.length - (i + 1);
+         return 'Oi! Sheep number ' + index + '! You are about to be eaten by a wolf!'
+      }
+   }
 }
